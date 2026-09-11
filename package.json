@@ -1,0 +1,28 @@
+{
+  "name": "@dgabehar/k8s-discovery-client",
+  "version": "0.1.0",
+  "description": "Shared in-cluster K8s-API-over-HTTPS+Bearer primitives (fresh ServiceAccount-token read, CA-pinned fetch, K8s label/name sanitization, output-allowlisting parse helper), extracted from opencode-agent-harness/bridge/src/discovery.ts and fleet-console/src/k8s-enumerate.ts. No kubectl binary, no @kubernetes/client-node dependency -- Bun/Node's native fetch already supports the per-request tls: { ca, rejectUnauthorized } override this needs.",
+  "type": "module",
+  "private": false,
+  "license": "UNLICENSED",
+  "engines": {
+    "bun": ">=1.2.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bun test --isolate"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "typescript": "^5.6.0"
+  }
+}
